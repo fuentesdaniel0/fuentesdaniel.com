@@ -1,43 +1,24 @@
-# Installer image
-FROM node:18-alpine AS deps
-WORKDIR /app
+# Use an official Node.js runtime as a parent image.
+# Using alpine for a smaller image size.
+FROM node:20-alpine
 
-# Install dependencies based on the lock file
-COPY package.json yarn.lock* package-lock.json* pnpm-lock.yaml* ./
-RUN \
-  if [ -f yarn.lock ]; then yarn --frozen-lockfile; \
-  elif [ -f package-lock.json ]; then npm ci; \
-  elif [ -f pnpm-lock.yaml ]; then yarn global add pnpm && pnpm i --frozen-lockfile; \
-  else echo "Lockfile not found." && exit 1; \
-  fi
+# Set the working directory in the container
+WORKDIR /usr/src/app
 
-# Builder image
-FROM node:18-alpine AS builder
-WORKDIR /app
-COPY --from=deps /app/node_modules ./node_modules
+# Copy package.json and package-lock.json (or yarn.lock)
+# This allows us to leverage Docker's layer caching.
+COPY package*.json ./
+
+# Install app dependencies
+# Using 'npm ci' is recommended for production builds as it's faster and more reliable.
+RUN npm ci --only=production
+
+# Bundle app source
 COPY . .
 
-ENV NEXT_TELEMETRY_DISABLED 1
-
-RUN npm run build
-
-# Production image, copy all the files and run next
-FROM node:18-alpine AS runner
-WORKDIR /app
-
-ENV NODE_ENV production
-ENV NEXT_TELEMETRY_DISABLED 1
-
-RUN addgroup --system --gid 1001 nodejs
-RUN adduser --system --uid 1001 nextjs
-
-COPY --from=builder /app/public ./public
-COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
-COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
-
-USER nextjs
-
+# Your app likely binds to a port (e.g., 3000). Expose it.
 EXPOSE 3000
-ENV PORT 3000
 
-CMD ["node", "server.js"]
+# Define the command to run your app.
+# This will execute the "start" script in your package.json
+CMD [ "npm", "start" ]

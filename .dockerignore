@@ -1,8 +1,7 @@
+# Ignore logs and git files
+npm-debug.log
+.git
+.gitignore
 Dockerfile
 .dockerignore
 node_modules
-.next
-npm-debug.log
-README.md
-.git
-.gitignore
