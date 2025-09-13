@@ -1,0 +1,34 @@
+.aboutSection {
+  display: flex;
+  padding: 32px;
+  background-color: #fff;
+  opacity: 0.8;
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  width: 100%;
+  min-width: 300px;
+}
+
+.sectionHeading {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.sectionTitle {
+  font-weight: 700;
+  font-size: 24px;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  color: var(--color-text-primary);
+}
+
+.paragraph {
+  font-size: 16px;
+  line-height: 1.4;
+  color: var(--color-text-primary);
+}

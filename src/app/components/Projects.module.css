@@ -1,0 +1,78 @@
+.projectsSection {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  padding: 32px;
+  background-color: #fff;
+}
+
+.sectionHeading {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.sectionTitle {
+  font-weight: 700;
+  font-size: 24px;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  color: var(--color-text-primary);
+}
+
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 64px;
+  width: 100%;
+}
+
+.card {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex: 1 1 30%;
+  min-width: 240px;
+}
+
+.iconWrapper {
+  flex-shrink: 0;
+}
+
+.icon {
+  border: none;
+  outline: none;
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  flex-grow: 1;
+}
+
+.title {
+  font-weight: 700;
+  font-size: 24px;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  color: var(--color-text-primary);
+}
+
+.description {
+  font-size: 16px;
+  line-height: 1.4;
+  color: var(--color-text-secondary);
+}
+
+@media (max-width: 1440px) {
+  .card {
+    flex-basis: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .list {
+    gap: 48px;
+  }
+}
