@@ -1,11 +1,12 @@
 import styles from './Header.module.css';
+import Image from 'next/image';
 
 export default function Header() {
   return (
     <header className={styles.header}>
       <div className={styles.logoWrapper}>
         <a href="#" className={styles.logoLink}>
-          <img src="/images/icon-5.svg" className={styles.logoIcon} alt="Logo" />
+          <Image src="/images/icon-5.svg" className={styles.logoIcon} alt="Logo" width={40} height={40} />
         </a>
       </div>
       <nav className={styles.nav}>

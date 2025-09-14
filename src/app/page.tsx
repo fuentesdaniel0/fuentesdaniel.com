@@ -5,7 +5,9 @@ import Header from '@/app/components/Header';
 import Hero from '@/app/components/Hero';
 import Projects from '@/app/components/Projects';
 
-export default function HomePage() {
+
+
+const ComponentsPage = () => {
   return (
     <div className="container">
       <Header />
@@ -18,4 +20,6 @@ export default function HomePage() {
       <Footer />
     </div>
   );
-}
+};
+
+export default ComponentsPage;

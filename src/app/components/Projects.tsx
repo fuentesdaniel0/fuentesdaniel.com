@@ -1,4 +1,5 @@
 import styles from './Projects.module.css';
+import Image from 'next/image';
 
 export default function Projects() {
   return (
@@ -9,7 +10,7 @@ export default function Projects() {
       <div className={styles.list}>
         <article className={styles.card}>
           <div className={styles.iconWrapper}>
-            <img src="/images/icon-58.svg" className={styles.icon} alt="" />
+            <Image src="/images/icon-58.svg" className={styles.icon} alt="" width={64} height={64} />
           </div>
           <div className={styles.body}>
             <h3 className={styles.title}>Simple LLM service </h3>
@@ -18,11 +19,11 @@ export default function Projects() {
         </article>
         <article className={styles.card}>
           <div className={styles.iconWrapper}>
-            <img src="/images/icon-65.svg" className={styles.icon} alt="" />
+            <Image src="/images/icon-65.svg" className={styles.icon} alt="" width={64} height={64} />
           </div>
           <div className={styles.body}>
             <h3 className={styles.title}>Spotify analytics and collaboration features</h3>
-            <p className={styles.description}>A fun, full-stack web application that lets you and your friends find the music you have in common. By connecting your Spotify accounts, the app can find the songs that overlap in your playlists. It's built with a modern tech stack and uses the Spotify API to handle all the music data.</p>
+            <p className={styles.description}>A fun, full-stack web application that lets you and your friends find the music you have in common. By connecting your Spotify accounts, the app can find the songs that overlap in your playlists. It&apos;s built with a modern tech stack and uses the Spotify API to handle all the music data.</p>
           </div>
         </article>
       </div>

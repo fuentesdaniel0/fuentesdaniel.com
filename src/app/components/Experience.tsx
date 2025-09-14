@@ -1,4 +1,5 @@
 import styles from './Experience.module.css';
+import Image from 'next/image';
 
 export default function Experience() {
   return (
@@ -10,7 +11,7 @@ export default function Experience() {
         <details className={styles.item}>
           <summary className={styles.summary}>
             <p className={styles.title}>Customer Engineer  - Google Cloud </p>
-            <img src="/images/icon-41.svg" className="accordion-arrow" alt="Toggle details" />
+            <Image src="/images/icon-41.svg" className="accordion-arrow" alt="Toggle details" width={24} height={24} />
           </summary>
           <div className={styles.content}>
             <p>Details about the Customer Engineer role at Google Cloud.</p>
@@ -19,7 +20,7 @@ export default function Experience() {
         <details className={styles.item}>
           <summary className={styles.summary}>
             <p className={styles.title}>Solutions Engineer - Google Cloud </p>
-            <img src="/images/icon-46.svg" className="accordion-arrow" alt="Toggle details" />
+            <Image src="/images/icon-46.svg" className="accordion-arrow" alt="Toggle details" width={24} height={24} />
           </summary>
           <div className={styles.content}>
             <p>Details about the Solutions Engineer role at Google Cloud.</p>
@@ -28,7 +29,7 @@ export default function Experience() {
         <details className={styles.item}>
           <summary className={styles.summary}>
             <p className={styles.title}>Software Engineer - PROS</p>
-            <img src="/images/icon-51.svg" className="accordion-arrow" alt="Toggle details" />
+            <Image src="/images/icon-51.svg" className="accordion-arrow" alt="Toggle details" width={24} height={24} />
           </summary>
           <div className={styles.content}>
             <p>Details about the Software Engineer role at PROS.</p>
